@@ -1,0 +1,16 @@
+.Teclado {
+    display: flex;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgb(7, 7, 7);
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex: 4;
+}
+
+.row {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-around;
+    align-items: stretch;
+}

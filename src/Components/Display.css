@@ -1,0 +1,17 @@
+.Display {
+    height: 155px;
+    color: white;
+    /*border-radius: 10px 10px 0 0;*/
+    background: linear-gradient(var(--accent-start), var(--accent-end));
+    align-items: flex-end;
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
+    font-family: "Arial", serif;
+    padding: 10px;
+    flex-grow: 1;
+}
+
+.big-text {
+    font-size: 54px;
+}

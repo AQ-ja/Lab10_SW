@@ -1,0 +1,64 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import './Display.css';
+import exist from '../utils/salida';
+import MAX_DIGITS from '../nonvarianle/MAX_DIGITS';
+
+export default function Display(props) {
+  const {
+    number, operation, bufferedValue, stored, decimalAmount, showError,
+  } = props;
+
+  let message = '';
+  if (exist(operation)) {
+    message = `${stored} ${operation}`;
+    if (exist(bufferedValue)) {
+      message += ` ${bufferedValue} =`;
+    }
+  }
+
+  let bigText;
+  if (exist(decimalAmount)) {
+    if (decimalAmount === 0) {
+      bigText = `${number.toFixed(0)}.`;
+    } else {
+      bigText = number.toFixed(decimalAmount).toString();
+    }
+  } else {
+    bigText = number.toString();
+  }
+
+  if (showError) {
+    message = '';
+    bigText = 'ERROR';
+  }
+
+  if (bigText.length > MAX_DIGITS) {
+    bigText = bigText.slice(0, MAX_DIGITS);
+  }
+
+  return (
+    <div className="Display">
+      <span className="small-text">{message}</span>
+      <span className="big-text">{bigText}</span>
+    </div>
+  );
+}
+
+Display.propTypes = {
+  number: PropTypes.number,
+  operation: PropTypes.string,
+  bufferedValue: PropTypes.number,
+  stored: PropTypes.number,
+  decimalAmount: PropTypes.number,
+  showError: PropTypes.bool,
+};
+
+Display.defaultProps = {
+  number: 0,
+  operation: '',
+  bufferedValue: null,
+  decimalAmount: null,
+  stored: null,
+  showError: false,
+};
