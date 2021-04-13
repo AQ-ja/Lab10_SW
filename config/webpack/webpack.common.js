@@ -12,7 +12,7 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Calculadora',
+      title: 'Calcu_Lab10',
       filename: 'index.html',
     }),
   ],
