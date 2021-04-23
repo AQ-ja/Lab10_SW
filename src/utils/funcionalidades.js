@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import limite_num from './limite_nums';
 
 export default function operate(operacion, valor1, valor2) {
