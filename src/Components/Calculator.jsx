@@ -1,16 +1,17 @@
+/* eslint-disable camelcase */
 // Codigo de ejemplo:
 // https://github.com/ahfarmer/calculator
 // extraido de:
 // https://es.reactjs.org/community/examples.html
 // Diseño a partir de la calculadora de Samsung.
 import React from 'react';
-import './Calculator.css';
+import '../Styles/calculadora.css';
 import Display from './Display';
 import operate from '../utils/funcionalidades';
 import Teclado from './Teclado';
 import exist from '../utils/salida';
 import characterAmount from '../utils/Cantidades';
-import MAX_DIGITS from '../nonvarianle/MAX_DIGITS';
+import limite_nums from '../nonvarianle/limite_nums';
 
 export default class Calculadora extends React.Component {
   constructor(props) {
@@ -224,7 +225,7 @@ export default class Calculadora extends React.Component {
 
   canWrite() {
     const { currentValue, decimals } = this.state;
-    return characterAmount(currentValue, decimals) < MAX_DIGITS;
+    return characterAmount(currentValue, decimals) < limite_nums;
   }
 
   statesAreEqual(otherState) {

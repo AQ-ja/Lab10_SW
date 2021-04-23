@@ -1,8 +1,9 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Display.css';
+import '../Styles/screen.css';
 import exist from '../utils/salida';
-import MAX_DIGITS from '../nonvarianle/MAX_DIGITS';
+import limite_num from '../nonvarianle/limite_nums';
 
 export default function Display(props) {
   const {
@@ -33,8 +34,8 @@ export default function Display(props) {
     bigText = 'ERROR';
   }
 
-  if (bigText.length > MAX_DIGITS) {
-    bigText = bigText.slice(0, MAX_DIGITS);
+  if (bigText.length > limite_num) {
+    bigText = bigText.slice(0, limite_num);
   }
 
   return (

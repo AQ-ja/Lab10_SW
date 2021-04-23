@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Button.css';
+import '../Styles/button.css';
 
 export default class Boton extends React.Component {
   constructor(props) {
@@ -10,10 +10,10 @@ export default class Boton extends React.Component {
 
   onClick() {
     const {
-      content, isSymbol, isSpecial, onClick, superSpecial,
+      content, simbolo, estatico, onClick, uniko,
     } = this.props;
 
-    if (isSymbol || !(isSpecial && !superSpecial)) {
+    if (simbolo || !(estatico && !uniko)) {
       onClick(content);
     } else {
       onClick();
@@ -23,24 +23,24 @@ export default class Boton extends React.Component {
   render() {
     const {
       content,
-      isSymbol,
-      isWide,
-      isSpecial,
-      superSpecial,
+      simbolo,
+      Amp,
+      estatico,
+      uniko,
     } = this.props;
 
-    let buttonType = 'Number';
+    let buttonType = 'numero';
 
-    if (isSymbol) {
-      buttonType = 'Symbol';
-    } else if (isSpecial) {
-      buttonType = 'Static';
-    } else if (superSpecial) {
-      buttonType = 'Special';
+    if (simbolo) {
+      buttonType = 'activo';
+    } else if (estatico) {
+      buttonType = 'fijo';
+    } else if (uniko) {
+      buttonType = 'ezpecial';
     }
 
-    if (isWide) {
-      buttonType += ' Wide';
+    if (Amp) {
+      buttonType += 'sid';
     }
 
     return (
@@ -52,16 +52,16 @@ export default class Boton extends React.Component {
 Boton.propTypes = {
   content: PropTypes.string.isRequired,
   onClick: PropTypes.func,
-  isSymbol: PropTypes.bool,
-  isWide: PropTypes.bool,
-  isSpecial: PropTypes.bool,
-  superSpecial: PropTypes.bool,
+  simbolo: PropTypes.bool,
+  Amp: PropTypes.bool,
+  estatico: PropTypes.bool,
+  uniko: PropTypes.bool,
 };
 
 Boton.defaultProps = {
-  isSymbol: false,
-  isWide: false,
-  isSpecial: false,
-  superSpecial: false,
+  simbolo: false,
+  Amp: false,
+  estatico: false,
+  uniko: false,
   onClick: () => {},
 };

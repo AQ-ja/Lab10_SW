@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Teclado.css';
+import '../Styles/keyboard.css';
 import Button from './Button';
 
 export default function Teclado(props) {
@@ -11,34 +11,34 @@ export default function Teclado(props) {
   return (
     <div className="Teclado">
       <div className="row">
-        <Button content="C" onClick={clear} isSpecial />
-        <Button content="+/-" onClick={signToggle} isSpecial />
-        <Button content=" ⤺ " onClick={undo} superSpecial />
-        <Button content="%" onClick={addOperation} isSymbol isSpecial />
-        <Button content="÷" onClick={addOperation} isSymbol />
+        <Button content="C" onClick={clear} estatico />
+        <Button content="+/-" onClick={signToggle} estatico />
+        <Button content=" ⤺ " onClick={undo} uniko />
+        <Button content="%" onClick={addOperation} simbolo estatico />
+        <Button content="÷" onClick={addOperation} simbolo />
       </div>
       <div className="row">
         <Button content={7} onClick={addNumber} />
         <Button content={8} onClick={addNumber} />
         <Button content={9} onClick={addNumber} />
-        <Button content="x" onClick={addOperation} isSymbol />
+        <Button content="x" onClick={addOperation} simbolo />
       </div>
       <div className="row">
         <Button content={4} onClick={addNumber} />
         <Button content={5} onClick={addNumber} />
         <Button content={6} onClick={addNumber} />
-        <Button content="-" onClick={addOperation} isSymbol />
+        <Button content="-" onClick={addOperation} simbolo />
       </div>
       <div className="row">
         <Button content={1} onClick={addNumber} />
         <Button content={2} onClick={addNumber} />
         <Button content={3} onClick={addNumber} />
-        <Button content="+" isSymbol onClick={addOperation} />
+        <Button content="+" simbolo onClick={addOperation} />
       </div>
       <div className="row">
         <Button content={0} onClick={addNumber} isWide />
-        <Button content="." onClick={activateDecimals} isSymbol />
-        <Button content="=" onClick={resolve} superSpecial />
+        <Button content="." onClick={activateDecimals} simbolo />
+        <Button content="=" onClick={resolve} uniko />
       </div>
     </div>
   );

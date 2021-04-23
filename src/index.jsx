@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Calculator from './Components/Calculator';
-import './nonvarianle/CONSTANTS.css';
+import './Styles/limdigi.css';
 
 ReactDOM.render(<Calculator />, document.body);

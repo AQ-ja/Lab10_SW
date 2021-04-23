@@ -1,29 +1,29 @@
-import MAX_DIGITS from '../nonvarianle/MAX_DIGITS';
+import MAX_DIGITS from '../nonvarianle/limite_nums';
 
-export default function operate(operation, value1, value2) {
+export default function operate(operacion, valor1, valor2) {
   let result;
-  switch (operation) {
+  switch (operacion) {
     case '+':
-      result = value1 + value2;
+      result = valor1 + valor2;
       break;
     case '-':
-      result = value1 - value2;
+      result = valor1 - valor2;
       break;
     case '÷':
-      result = value1 / value2;
+      result = valor1 / valor2;
       break;
     case 'x':
-      result = value1 * value2;
+      result = valor1 * valor2;
       break;
     case '%':
-      result = value1 % value2;
+      result = valor1 % valor2;
       break;
     default:
-      result = value2;
+      result = valor2;
       break;
   }
   if (result >= 10 ** MAX_DIGITS || -(10 ** MAX_DIGITS) >= result) {
-    throw Error('Result exceeded max number of digits.');
+    throw Error('El resultado excede el maximo de digitos.');
   }
   return result;
 }
