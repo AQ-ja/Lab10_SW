@@ -11,7 +11,7 @@ import operate from '../utils/funcionalidades';
 import Teclado from './Teclado';
 import exist from '../utils/salida';
 import characterAmount from '../utils/Cantidades';
-import limite_nums from '../nonvarianle/limite_nums';
+import limite_nums from '../utils/limite_nums';
 
 export default class Calculadora extends React.Component {
   constructor(props) {

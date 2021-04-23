@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../Styles/screen.css';
 import exist from '../utils/salida';
-import limite_num from '../nonvarianle/limite_nums';
+import limite_num from '../utils/limite_nums';
 
 export default function Display(props) {
   const {

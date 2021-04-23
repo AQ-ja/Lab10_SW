@@ -1,4 +1,4 @@
-import MAX_DIGITS from '../nonvarianle/limite_nums';
+import limite_num from './limite_nums';
 
 export default function operate(operacion, valor1, valor2) {
   let result;
@@ -22,7 +22,7 @@ export default function operate(operacion, valor1, valor2) {
       result = valor2;
       break;
   }
-  if (result >= 10 ** MAX_DIGITS || -(10 ** MAX_DIGITS) >= result) {
+  if (result >= 10 ** limite_num || -(10 ** limite_num) >= result) {
     throw Error('El resultado excede el maximo de digitos.');
   }
   return result;
