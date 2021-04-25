@@ -7,7 +7,7 @@ import limite_num from '../utils/limite_nums';
 
 export default function Display(props) {
   const {
-    number, operation, bufferedValue, stored, decimalAmount, showError,
+    number, operation, bufferedValue, stored, decimalAmount,
   } = props;
 
   let message = '';
@@ -29,11 +29,6 @@ export default function Display(props) {
     bigText = number.toString();
   }
 
-  if (showError) {
-    message = '';
-    bigText = 'ERROR';
-  }
-
   if (bigText.length > limite_num) {
     bigText = bigText.slice(0, limite_num);
   }
@@ -52,7 +47,6 @@ Display.propTypes = {
   bufferedValue: PropTypes.number,
   stored: PropTypes.number,
   decimalAmount: PropTypes.number,
-  showError: PropTypes.bool,
 };
 
 Display.defaultProps = {
@@ -61,5 +55,4 @@ Display.defaultProps = {
   bufferedValue: null,
   decimalAmount: null,
   stored: null,
-  showError: false,
 };

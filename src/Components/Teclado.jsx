@@ -9,9 +9,9 @@ export default function Teclado(props) {
   } = props;
 
   return (
-    <div className="Teclado">
+    <div className="Key">
       <div className="row">
-        <Button content="C" onClick={clear} estatico />
+        <Button testid="clear" content="C" onClick={clear} estatico />
         <Button content="+/-" onClick={signToggle} estatico />
         <Button content=" ⤺ " onClick={undo} uniko />
         <Button content="%" onClick={addOperation} simbolo estatico />
